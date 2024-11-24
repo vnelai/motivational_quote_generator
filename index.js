@@ -38,6 +38,7 @@ const heroImage = document.querySelector('.hero-image');
 //Add event listener on motivational button
 motivationalQuoteButton.addEventListener("click", () => {
     motivationalQuote.innerText = getRandomMotivationalQuote(); //update quote text with get random function
+    heroImage.src = "/Images/skyisthelimit.jpg"; // Change image on button click
 });
 
 
@@ -47,7 +48,7 @@ const newQuote = document.createElement("p");
 newQuote.textContent = "Enter your custom quote here!";
 document.querySelector("#quote-section").appendChild(newQuote);
 
-// Parent-child-sibling navigation 
+// Parent-child navigation 
 const quoteDiv = document.querySelector('.quote-div');
 const quoteParent = quoteDiv.parentNode;
 quoteParent.style.backgroundColor = "#e2e5e0"; 
