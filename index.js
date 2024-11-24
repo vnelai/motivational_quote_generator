@@ -33,6 +33,7 @@ function getRandomMotivationalQuote () {
 //Caching Elements from DOM
 const motivationalQuote = document.getElementById("motivational-quote");
 const motivationalQuoteButton = document.getElementById("motivational-quote-button");
+const heroImage = document.querySelector('.hero-image');
 
 //Add event listener on motivational button
 motivationalQuoteButton.addEventListener("click", () => {
