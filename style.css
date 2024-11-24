@@ -1,4 +1,95 @@
+
+/* Reset default margins */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page content styling and centering */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Horizontal centering */
+    justify-content: center; /* Vertical centering */
+    /* height: 100vh; */
+    background-color: #cad2c5;
+    text-align: center;
+    height: auto;
+    padding-top: 40px;
+}
+
+
+/* Main container styling */
+#main-container {
+    width: 100%;
+    max-width: 1200px; 
+    margin: auto;
+    border-radius: 10px;
+}
+
+/* Header styles */
+header {
+    padding: 30px;
+    background-color: #52796f;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+/* Hero image styling */
 .hero-image {
-    max-width: 1920px;
-    max-height: 600px;
+    width: 100%;
+    height: auto;
+}
+
+
+/* Quote section */
+#quote-section {
+    padding: 40px 20px;
+    background-color: #84a98c;
+}
+
+.quote-div {
+    margin: 20px auto;
+    padding: 20px;
+    background: #cad2c5;
+    border-radius: 10px;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quote-text {
+    font-size: 1.5em;
+    color: #151515;
+    margin-bottom: 20px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Button styles */
+.quote-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #52796f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quote-button:hover {
+    background-color: #264653;
+}
+
+/* Footer styles */
+footer {
+    padding: 10px;
+    background-color: #52796f;
+    color: white;
+    font-size: 0.9em;
 }
