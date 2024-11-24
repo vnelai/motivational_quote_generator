@@ -46,3 +46,8 @@ motivationalQuoteButton.addEventListener("click", () => {
 const newQuote = document.createElement("p");
 newQuote.textContent = "Enter your custom quote here!";
 document.querySelector("#quote-section").appendChild(newQuote);
+
+// Parent-child-sibling navigation 
+const quoteDiv = document.querySelector('.quote-div');
+const quoteParent = quoteDiv.parentNode;
+quoteParent.style.backgroundColor = "#e2e5e0"; 

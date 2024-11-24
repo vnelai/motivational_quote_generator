@@ -50,7 +50,7 @@ header h1 {
 /* Quote section */
 #quote-section {
     padding: 40px 20px;
-    background-color: #84a98c;
+    /* background-color: #e2e5e0; */ /* Using DOM styling instead for this element */
 }
 
 .quote-div {
@@ -67,7 +67,7 @@ header h1 {
     color: #151515;
     margin-bottom: 20px;
     font-style: italic;
-    text-align: center;
+    text-align: center
 }
 
 /* Button styles */
