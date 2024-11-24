@@ -1,4 +1,4 @@
-//Array collections of quotes
+//Array collections of motivational quotes
 const motivationalQuotes = [
     "The only way to do great work is to love what you do.",
     "Success is not final, failure is not fatal: It is the courage to continue that counts.",
@@ -21,4 +21,11 @@ const motivationalQuotes = [
     "It always seems impossible until it's done.",
     "The moment you want to quit is the moment you need to keep pushing.",
     "Don't give up. Great things take time.",
-]
+];
+
+
+//Random motivational quote function
+function getRandomMotivationalQuote () {
+    const randomNumber = Math.floor(Math.random() * motivationalQuotes.length); //Random index
+    return motivationalQuotes[randomNumber]; //Random quote
+}
