@@ -24,8 +24,15 @@ const motivationalQuotes = [
 ];
 
 
-//Random motivational quote function
+//Random motivational quote function - Handler function
 function getRandomMotivationalQuote () {
     const randomNumber = Math.floor(Math.random() * motivationalQuotes.length); //Random index
     return motivationalQuotes[randomNumber]; //Random quote
 }
+
+//Caching Elements from DOM
+const motivationalQuote = document.getElementById("motivational-quote");
+const motivationalQuoteButton = document.getElementById("motivational-quote-button");
+
+
+
