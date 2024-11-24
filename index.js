@@ -40,3 +40,4 @@ motivationalQuoteButton.addEventListener("click", () => {
     motivationalQuote.innerText = getRandomMotivationalQuote(); //update quote text with get random function
 });
 
+
