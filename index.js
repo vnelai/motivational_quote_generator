@@ -34,5 +34,8 @@ function getRandomMotivationalQuote () {
 const motivationalQuote = document.getElementById("motivational-quote");
 const motivationalQuoteButton = document.getElementById("motivational-quote-button");
 
-
+//Add event listener on motivational button
+motivationalQuoteButton.addEventListener("click", () => {
+    motivationalQuote.innerText = getRandomMotivationalQuote(); //update quote text with get random function
+});
 
