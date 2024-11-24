@@ -41,3 +41,8 @@ motivationalQuoteButton.addEventListener("click", () => {
 });
 
 
+
+// Create new element and append it to the DOM 
+const newQuote = document.createElement("p");
+newQuote.textContent = "Enter your custom quote here!";
+document.querySelector("#quote-section").appendChild(newQuote);
