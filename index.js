@@ -39,7 +39,7 @@ const heroImages = [
     "Images/whatyoudomatters.jpg"
 ];
 
-// // Preload the images to avoid delay
+// // Preload the images to avoid loading delay
 const preloadImages = () => {
     heroImages.forEach(imageSrc => {
         const img = new Image();
@@ -61,6 +61,9 @@ const motivationalQuote = document.getElementById("motivational-quote");
 const motivationalQuoteButton = document.getElementById("motivational-quote-button");
 const heroImage = document.querySelector('.hero-image');
 
+//Track current hero-image index
+let currentHeroImageIndex = -1;
+
 //Add event listener on motivational button
 motivationalQuoteButton.addEventListener("click", () => {
     //Fade out current image
@@ -69,17 +72,20 @@ motivationalQuoteButton.addEventListener("click", () => {
     //update quote text with get random function
     motivationalQuote.innerText = getRandomMotivationalQuote(); 
 
-    //Random hero-image
-    const randomImage = Math.floor(Math.random() * heroImages.length);
-    heroImage.src = heroImages[randomImage]; //update image with random Image index
+    //Random hero-image but ensure the same image is not generated twice in order
+    let randomImageIndex;
+    do {
+        randomImageIndex = Math.floor(Math.random() * heroImages.length);
+    } while (randomImageIndex === currentHeroImageIndex);
+
+    currentHeroImageIndex = randomImageIndex; //Update current image index with randomized index
+    heroImage.src = heroImages[currentHeroImageIndex]; //Update image with random Image index
 
     //Fade in new image
     heroImage.onload = () => {
         heroImage.classList.remove("hidden");
     }
 });
-
-
 
 // Create new element and append it to the DOM 
 const newQuote = document.createElement("p");
