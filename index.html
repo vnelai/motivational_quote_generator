@@ -20,9 +20,15 @@
                 </div>
                 <form id="new-quote-form"> 
                     <label for="user-quote">Submit your quote:</label>
-                    <input type="text" id="user-quote" required placeholder="Enter your quote">
+                    <input type="text" id="user-quote" minlength="5" placeholder="Enter your quote" required>
                     <button type="submit" id="new-quote-button">Submit Quote</button>
                 </form>
+                <div id="all-quotes-div">
+                    <h2>All Motivational Quotes</h2>
+                    <button id="show-all-quotes-button">Show All Quotes</button>
+                    <ul id="quotes-list" style="display: none;"></ul>
+                </div>
+                
             </section>
         </main>
         <footer>

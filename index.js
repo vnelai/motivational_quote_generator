@@ -72,3 +72,28 @@ newQuoteForm.addEventListener('submit', (event) => {
 window.addEventListener('resize', () => {
     console.log(`Window width: ${window.innerWidth}`);
 });
+
+//All quotes section
+const quotesList = document.getElementById("quotes-list");
+const documentFragment = document.createDocumentFragment();
+
+motivationalQuotes.forEach((quote) => {
+    const quoteItem = document.createElement("li");
+    quoteItem.textContent = quote;
+    documentFragment.appendChild(quoteItem);
+});
+
+quotesList.appendChild(documentFragment);
+
+//Show all quotes button event listener
+const showAllQuotesButton = document.getElementById("show-all-quotes-button");
+
+showAllQuotesButton.addEventListener("click", () => {
+    if (quotesList.style.display === "none") {  // If all quptes are hidden
+        quotesList.style.display = "block";    // Show all quotes
+        showAllQuotesButton.textContent = "Hide All Quotes";   //Change button text 
+    } else {
+        quotesList.style.display = "none";   //Hide all quotes
+        showAllQuotesButton.textContent = "Show All Quotes"; //Change button text
+    }
+});

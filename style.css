@@ -50,11 +50,10 @@ header h1 {
 /* Quote section */
 #quote-section {
     padding: 40px 20px;
-    /* background-color: #e2e5e0; */ /* Using DOM styling instead for this element */
 }
 
 .quote-div {
-    margin: 20px auto;
+    margin: 20px auto 80px auto;
     padding: 20px;
     background: #cad2c5;
     border-radius: 10px;
@@ -68,6 +67,24 @@ header h1 {
     margin-bottom: 20px;
     font-style: italic;
     text-align: center
+}
+
+/* All quotes Section */
+#all-quotes-div {
+    margin: 80px auto 20px auto;
+    padding: 20px;
+    background: #cad2c5;
+    border-radius: 10px;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#quotes-list > li {
+    text-align: left;
+}
+
+#all-quotes-div > h2 {
+    color: rgb(71, 69, 69);
 }
 
 /* Button styles */
@@ -96,6 +113,20 @@ header h1 {
 }
 
 #new-quote-button:hover {
+    background-color: #264653;
+}
+
+#show-all-quotes-button {
+    padding: 5px 10px;
+    font-size: 0.8em;
+    color: white;
+    background-color: #52796f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#show-all-quotes-button:hover {
     background-color: #264653;
 }
 
