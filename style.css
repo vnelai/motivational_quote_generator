@@ -79,10 +79,23 @@ header h1 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
 .quote-button:hover {
+    background-color: #264653;
+}
+
+#new-quote-button {
+    padding: 5px 10px;
+    font-size: 0.8em;
+    color: white;
+    background-color: #52796f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#new-quote-button:hover {
     background-color: #264653;
 }
 

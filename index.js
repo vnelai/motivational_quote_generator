@@ -45,7 +45,10 @@ motivationalQuoteButton.addEventListener("click", () => {
 // Create new element and append it to the DOM 
 const newQuote = document.createElement("p");
 newQuote.textContent = "Enter your custom quote here!";
-document.querySelector("#quote-section").appendChild(newQuote);
+const quoteSection = document.querySelector("#quote-section");
+const newQuoteForm = document.getElementById('new-quote-form');
+quoteSection.insertBefore(newQuote, newQuoteForm);
+newQuote.style.paddingTop = "20px";
 
 // Parent-child navigation 
 const quoteDiv = document.querySelector('.quote-div');
@@ -53,12 +56,15 @@ const quoteParent = quoteDiv.parentNode;
 quoteParent.style.backgroundColor = "#e2e5e0"; 
 
 // Event listener for form
-const newQuoteForm = document.getElementById('new-quote-form');
-form.addEventListener('submit', (event) => {
+newQuoteForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const userQuoteInput = document.getElementById('user-quote');
     if (userQuoteInput.value) {
         motivationalQuotes.push(userQuoteInput.value); // Add new quote to array
-        alert('Quote submitted successfully!');
+        alert(`Quote submitted successfully: "${userQuoteInput.value}"`);
+        userQuoteInput.value = "";
+    } else {
+        alert("Please enter a valid quote.")
     }
 });
+
