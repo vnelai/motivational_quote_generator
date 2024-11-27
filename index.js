@@ -23,11 +23,37 @@ const motivationalQuotes = [
     "Don't give up. Great things take time.",
 ];
 
+const heroImages = [
+    "/Images/dontletthemstopyou.jpg",
+    "/Images/punchyourfears.jpg",
+    "/Images/quote-img.jpg",
+    "Images/skyisthelimit.jpg",
+    "Images/success1.jpg",
+    "Images/success2.jpg",
+    "Images/success3.jpg",
+    "/Images/sunsetmotivation.jpg",
+    "Images/thebigsupport.jpg",
+    "Images/toppoint1.jpg",
+    "Images/toppoint2.jpg",
+    "Images/toppoint3.jpg",
+    "Images/whatyoudomatters.jpg"
+];
+
+// // Preload the images to avoid delay
+const preloadImages = () => {
+    heroImages.forEach(imageSrc => {
+        const img = new Image();
+        img.src = imageSrc;
+    });
+};
+
+// Call the preloadImages function
+preloadImages();
 
 //Random motivational quote function - Handler function
 function getRandomMotivationalQuote () {
-    const randomNumber = Math.floor(Math.random() * motivationalQuotes.length); //Random index
-    return motivationalQuotes[randomNumber]; //Random quote
+    const randomQuote = Math.floor(Math.random() * motivationalQuotes.length); //Random index
+    return motivationalQuotes[randomQuote]; //Random quote
 }
 
 //Caching Elements from DOM
@@ -37,9 +63,22 @@ const heroImage = document.querySelector('.hero-image');
 
 //Add event listener on motivational button
 motivationalQuoteButton.addEventListener("click", () => {
-    motivationalQuote.innerText = getRandomMotivationalQuote(); //update quote text with get random function
-    heroImage.src = "/Images/skyisthelimit.jpg"; // Change image on button click
+    //Fade out current image
+    heroImage.classList.add("hidden");
+
+    //update quote text with get random function
+    motivationalQuote.innerText = getRandomMotivationalQuote(); 
+
+    //Random hero-image
+    const randomImage = Math.floor(Math.random() * heroImages.length);
+    heroImage.src = heroImages[randomImage]; //update image with random Image index
+
+    //Fade in new image
+    heroImage.onload = () => {
+        heroImage.classList.remove("hidden");
+    }
 });
+
 
 
 // Create new element and append it to the DOM 
