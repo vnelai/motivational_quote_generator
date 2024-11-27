@@ -136,6 +136,10 @@ header h1 {
     background-color: #264653;
 }
 
+#quotes-list {
+    display: none;
+}
+
 /* Footer styles */
 footer {
     padding: 10px;

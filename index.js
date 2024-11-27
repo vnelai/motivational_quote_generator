@@ -61,6 +61,11 @@ const motivationalQuote = document.getElementById("motivational-quote");
 const motivationalQuoteButton = document.getElementById("motivational-quote-button");
 const heroImage = document.querySelector('.hero-image');
 
+//All quotes section - caching elements
+const quotesList = document.getElementById("quotes-list");
+const documentFragment = document.createDocumentFragment();
+
+
 //Track current hero-image index
 let currentHeroImageIndex = -1;
 
@@ -100,12 +105,35 @@ const quoteDiv = document.querySelector('.quote-div');
 const quoteParent = quoteDiv.parentNode;
 quoteParent.style.backgroundColor = "#e2e5e0"; 
 
+//Function to populate quotes list using document fragment
+function populateQuotesList () {
+    const documentFragment = document.createDocumentFragment();
+    motivationalQuotes.forEach((quote) => {
+        const quoteLi = document.createElement("li");
+        quoteLi.textContent = quote;
+        documentFragment.appendChild(quoteLi);
+    });
+    return documentFragment; // Return the fragment to be appended to the DOM
+}
+
+// Initial population of quotes list on page load
+quotesList.innerHTML = "";  // Clear existing quotes
+quotesList.appendChild(populateQuotesList());  // Populate the quotes list
+
+
 // Event listener for form
 newQuoteForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const userQuoteInput = document.getElementById('user-quote');
+
     if (userQuoteInput.value) {
         motivationalQuotes.push(userQuoteInput.value); // Add new quote to array
+       
+        //Rebuild quotes list
+        quotesList.innerHTML = "";  // Clear existing list
+        quotesList.appendChild(populateQuotesList()); //Append list to DOM
+        
+        //Provide Alerts
         alert(`Quote submitted successfully: "${userQuoteInput.value}"`);
         userQuoteInput.value = "";
     } else {
@@ -118,23 +146,11 @@ window.addEventListener('resize', () => {
     console.log(`Window width: ${window.innerWidth}`);
 });
 
-//All quotes section
-const quotesList = document.getElementById("quotes-list");
-const documentFragment = document.createDocumentFragment();
-
-motivationalQuotes.forEach((quote) => {
-    const quoteItem = document.createElement("li");
-    quoteItem.textContent = quote;
-    documentFragment.appendChild(quoteItem);
-});
-
-quotesList.appendChild(documentFragment);
-
 //Show all quotes button event listener
 const showAllQuotesButton = document.getElementById("show-all-quotes-button");
 
 showAllQuotesButton.addEventListener("click", () => {
-    if (quotesList.style.display === "none") {  // If all quptes are hidden
+    if (quotesList.style.display === "none" || quotesList.style.display === "") {  // If all quotes are hidden
         quotesList.style.display = "block";    // Show all quotes
         showAllQuotesButton.textContent = "Hide All Quotes";   //Change button text 
     } else {
