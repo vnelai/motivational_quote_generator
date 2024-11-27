@@ -68,3 +68,7 @@ newQuoteForm.addEventListener('submit', (event) => {
     }
 });
 
+//Second BOM requirement
+window.addEventListener('resize', () => {
+    console.log(`Window width: ${window.innerWidth}`);
+});
