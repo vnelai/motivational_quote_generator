@@ -17,7 +17,6 @@ body {
     background-color: #cad2c5;
     text-align: center;
     height: auto;
-    padding-top: 40px;
 }
 
 
@@ -74,6 +73,7 @@ header h1 {
     font-style: italic;
     text-align: center
 }
+
 
 /* All quotes Section */
 #all-quotes-div {
@@ -134,10 +134,6 @@ header h1 {
 
 #show-all-quotes-button:hover {
     background-color: #264653;
-}
-
-#quotes-list {
-    display: none;
 }
 
 /* Footer styles */
