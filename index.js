@@ -71,6 +71,9 @@ let currentHeroImageIndex = -1;
 
 //Add event listener on motivational button
 motivationalQuoteButton.addEventListener("click", () => {
+    //Modify attribute with user interaction
+    motivationalQuoteButton.setAttribute("title", "You clicked this button!");
+
     //Fade out current image
     heroImage.classList.add("hidden");
 
@@ -90,6 +93,14 @@ motivationalQuoteButton.addEventListener("click", () => {
     heroImage.onload = () => {
         heroImage.classList.remove("hidden");
     }
+
+    const allButtons = document.querySelectorAll("button");
+
+    allButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        console.log(`${button.textContent} was clicked!`);
+    });
+});
 });
 
 // Create new element and append it to the DOM 
@@ -120,6 +131,14 @@ function populateQuotesList () {
 quotesList.innerHTML = "";  // Clear existing quotes
 quotesList.appendChild(populateQuotesList());  // Populate the quotes list
 
+//DOM Event-Based Validation
+const userQuoteInput = document.getElementById('user-quote');
+
+userQuoteInput.addEventListener("blur", () => {
+    if (userQuoteInput.value.trim().length < 5) {
+        alert("Quote must be at least 5 characters long!");
+    }
+});
 
 // Event listener for form
 newQuoteForm.addEventListener('submit', (event) => {
